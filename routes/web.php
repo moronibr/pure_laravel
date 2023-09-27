@@ -35,7 +35,10 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth', 'role:admin'])->group(function(){
 Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+
 });
+
+
 
 Route::middleware(['auth', 'role:manager'])->group(function(){
 Route::get('/manager/dashboard', [ManagerController::class, 'ManagerDashboard'])->name('manager.dashboard');
@@ -44,4 +47,6 @@ Route::get('/manager/dashboard', [ManagerController::class, 'ManagerDashboard'])
 Route::middleware(['auth', 'role:assistant'])->group(function(){
 Route::get('/assistant/dashboard', [AssistantController::class, 'AssistantDashboard'])->name('assistant.dashboard');
 });
+
+
 
